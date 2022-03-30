@@ -1,4 +1,7 @@
 <div>
-  <h1>This is App Component</h1>
-  <app-form></app-form>
+  <h1>This is Root App Component</h1>
+  <button (click)="showForm('tdf')">See Template Driven Form</button>
+  <button (click)="showForm('rf')">See Reactive Form</button>
+  <app-form *ngIf="tdf"></app-form>
+  <app-reactive-form *ngIf="rf"></app-reactive-form>
 </div>

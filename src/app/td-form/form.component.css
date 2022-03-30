@@ -1,0 +1,18 @@
+input {
+    margin: 20px;
+}
+input.ng-invalid.ng-touched {
+    border-color: red;
+}
+span.inputError{
+    color: red;
+}
+div {
+    margin: 5px;
+}
+.submitMsg {
+    color: green;
+}
+.userDataInvalidMsg {
+    color: red;
+}

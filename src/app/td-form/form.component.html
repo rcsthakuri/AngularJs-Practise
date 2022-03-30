@@ -1,4 +1,4 @@
-<h2>Form Component</h2>
+<h2>Template Driven Form Component</h2>
 <form (ngSubmit)="onSubmit()" #f="ngForm">
     <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
         <div>
@@ -44,11 +44,4 @@
     </div>
 </form>
 <hr>
-<div *ngIf="submitMsg">
-    <h2>User Fomr Data</h2>
-    <p>Username: {{user.username}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>Gender: {{user.gender}}</p>
-    <p>Country: {{user.country}}</p>
-    <p>Message: {{user.message}}</p>
-</div>
+<app-form-data [testForm]="formData"></app-form-data>

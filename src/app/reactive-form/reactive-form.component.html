@@ -1,0 +1,48 @@
+<h2>Reactive Form Component</h2>
+<form [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()">  
+    <div id="user-data" formGroupName="userData">
+        <div>
+            <labeL>Name</labeL>
+            <input type="text" name="username" formControlName="username"/>
+            <!-- <span class="inputError" *ngIf="!myReactiveForm.get('username').valid && myReactiveForm.get('username').touched">Please enter the name</span> -->
+        </div>
+        <!-- <button type="button">Suggest a username</button> -->
+        <div>
+            <label>Email</label>
+            <input  type="email" name="email" formControlName="email"/>       
+            <!-- <span class="inputError" *ngIf="!myReactiveForm.get('email').valid && myReactiveForm.get('email').touched">Please enter the email</span> -->
+        </div>
+        <div>
+            <span class="userDataInvalidMsg" *ngIf="!myReactiveForm.get('userData').valid && myReactiveForm.get('userData').touched">Please enter valid user data!</span>
+        </div>
+    </div>
+    <!-- <div *ngFor="let gender of genders">
+        <label>
+        <input type="radio" name="gender" ngModel [value] = "gender" />
+        {{gender}}
+        </label>
+
+    </div>
+    <div>
+        <label>Select country </label>
+        <select name="country" required>
+            <option value="nepal">Nepal</option>
+            <option value="india">India</option>
+            <option value="china">China</option>
+        </select>
+    </div> 
+    <div>
+        <label>Enter message</label><br>
+        <textarea name="textbox" rows="10" cols="50"></textarea>
+    </div>
+    <div>
+        You typed: {{'change me'}}
+    </div> -->
+    <button type="submit">Submit</button>
+    <!--
+    <div>
+        <p class="submitMsg" *ngIf="true"></p>
+    </div> -->
+</form>
+<hr>
+<!-- <app-form-data [testForm]="formData"></app-form-data> -->
