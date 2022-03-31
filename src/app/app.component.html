@@ -1,7 +1,9 @@
 <div>
   <h1>This is Root App Component</h1>
-  <button (click)="showForm('tdf')">See Template Driven Form</button>
-  <button (click)="showForm('rf')">See Reactive Form</button>
+  <button routerLink="tdf" routerLinkActive="active">See Template Driven Form</button>
+  <button routerLink='rf' routerLinkActive="active">See Reactive Form</button>
+  <button  (click)="showPersonalInfo()" routerLinkActive="active">Personal Information</button>
   <app-form *ngIf="tdf"></app-form>
   <app-reactive-form *ngIf="rf"></app-reactive-form>
+  <router-outlet></router-outlet>
 </div>

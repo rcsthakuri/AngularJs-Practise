@@ -39,9 +39,6 @@
         You typed: {{textBoxContent}}
     </div>
     <button type="submit" [disabled]="f.invalid">Submit</button>
-    <div>
-        <p class="submitMsg" *ngIf="submitMsg">{{submitMsg}}</p>
-    </div>
 </form>
 <hr>
 <app-form-data [testForm]="formData"></app-form-data>

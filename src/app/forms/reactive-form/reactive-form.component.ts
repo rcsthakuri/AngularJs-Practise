@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormDataComponent } from '../form-data/form-data.component';
 
 @Component({
   selector: 'app-reactive-form',
@@ -11,7 +12,8 @@ export class ReactiveFormComponent implements OnInit {
   constructor() { }
   genders = ['male', 'female'];
   myReactiveForm: FormGroup;
-
+  @ViewChild(FormDataComponent) child: FormDataComponent;
+  
   ngOnInit(): void {
     this.myReactiveForm = new FormGroup({
       userData: new FormGroup({
@@ -23,8 +25,16 @@ export class ReactiveFormComponent implements OnInit {
       message: new FormControl(null)
     })
   }
+  ngAfterViewInit() {
+    console.log(this.child);
+    
+  }
   onSubmit() {
-    console.log(this.myReactiveForm)
+    console.log(this.child)
+    this.child.submitMsg = "Form is submitted successfully."
+    this.child.testForm = this.myReactiveForm.value
+    this.child.showFormData();
+    this.myReactiveForm.reset()
   }
 
 }

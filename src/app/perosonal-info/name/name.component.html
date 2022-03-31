@@ -1,0 +1,7 @@
+<h2>Information about specific one</h2>
+<div *ngFor="let property of personalInfo | keyvalue">
+    <span>{{property.key | toString |  uppercase }} : {{property.value}}</span>
+</div>
+<div class="searchError" *ngIf="!personalInfo">
+    Search Not Found!!!
+</div>

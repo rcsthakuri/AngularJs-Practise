@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { FormDataComponent } from './form-data/form-data.component';
+import { FormDataComponent } from '../form-data/form-data.component';
 
 @Component({
   selector: 'app-form',
@@ -30,7 +30,7 @@ export class FormComponent {
   onSubmit() {
     console.log(this.child)
     console.log('form submitted');
-    this.submitMsg = "Form is submitted successfully."
+    this.child.submitMsg = "Form is submitted successfully."
     this.child.testForm = this.testForm.value
     this.child.showFormData();
     this.testForm.reset()

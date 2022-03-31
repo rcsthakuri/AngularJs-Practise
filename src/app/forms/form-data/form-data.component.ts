@@ -15,6 +15,7 @@ export class FormDataComponent implements OnInit {
     country: '',
     message: '',
   };
+  submitMsg;
   showData: Boolean = false;
   constructor() { }
 

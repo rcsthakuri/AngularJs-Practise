@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ export class AppComponent {
   title = 'practise';
   tdf: Boolean;
   rf: Boolean;
+  constructor(private router: Router) {}
   showForm(formType: String) {
     if(formType === 'tdf') {
       this.tdf= true;
@@ -19,5 +21,8 @@ export class AppComponent {
       this.tdf = false;
       this.rf = true;
     }
+  }
+  showPersonalInfo() {
+    this.router.navigate(['/personal-info'])
   }
 }

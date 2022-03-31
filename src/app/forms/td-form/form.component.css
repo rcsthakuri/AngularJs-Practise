@@ -10,9 +10,7 @@ span.inputError{
 div {
     margin: 5px;
 }
-.submitMsg {
-    color: green;
-}
+
 .userDataInvalidMsg {
     color: red;
 }
