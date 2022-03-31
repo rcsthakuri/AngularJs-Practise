@@ -1,5 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-form-data',
@@ -7,7 +8,9 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./form-data.component.css']
 })
 export class FormDataComponent implements OnInit {
-  @Input() testForm;
+  @Input('testform') testForm;
+  @Input('submitMsg') submitMsg;
+  @Input('obsD') obs;
   user = {
     username: '',
     email: '',
@@ -15,11 +18,15 @@ export class FormDataComponent implements OnInit {
     country: '',
     message: '',
   };
-  submitMsg;
   showData: Boolean = false;
+  subscription: Subscription;
+  submitStatus = 0
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('haha', this.obs)
+    this.subscription = this.obs.subscribe(status => status === 1 ? this.showFormData() : this.showData = false)
+  }
   showFormData() {
     this.showData = true;
     console.log(this.testForm)

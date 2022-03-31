@@ -3,8 +3,8 @@
     <div id="user-data" formGroupName="userData">
         <div>
             <labeL>Name</labeL>
-            <input type="text" name="username" formControlName="username"/>
-            <span class="inputError" *ngIf="!myReactiveForm.get('userData').get('username').valid && myReactiveForm.get('userData').get('username').touched">Please enter the name</span>
+            <input type="text" name="username" formControlName="name"/>
+            <span class="inputError" *ngIf="!myReactiveForm.get('userData').get('name').valid && myReactiveForm.get('userData').get('name').touched">Please enter the name</span>
         </div>
         <!-- <button type="button">Suggest a username</button> -->
         <div>
@@ -34,7 +34,7 @@
 
     <div>
         <label>Enter message</label><br>
-        <textarea name="textbox" rows="10" cols="50" formControlName="message"> </textarea>
+        <textarea name="textbox" rows="10" cols="50" formControlName="textbox"> </textarea>
     </div>
     <button type="submit" [disabled]="myReactiveForm.invalid">Submit</button>
     <!--
@@ -43,4 +43,4 @@
     </div> -->
 </form>
 <hr>
-<app-form-data [testForm]="myReactiveForm"></app-form-data>
+<app-form-data [testform]="myReactiveForm.value" [submitMsg]="submitMsg" [obsD]="formSubmitted"></app-form-data>
