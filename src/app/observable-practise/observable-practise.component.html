@@ -1,0 +1,11 @@
+<div>
+    <h2>Implementing counter via observable and observer pattern</h2>
+    <h3>Used Observable, Subscription from rxjs module</h3>
+    <button (click)="startCounter()" [disabled]="startBtnDisabled" [ngStyle]="{'background-color': startBtnDisabled ? '': 'skyblue'}">Start Counter</button>
+    <button (click)="stopCounter()" [disabled]="stopBtnDisabled" [ngStyle]="{'background-color': stopBtnDisabled ? '': 'skyblue'}">Stop Counter</button>
+    <button (click)="resetCounter()" [disabled]="resetBtnDisabled" [ngStyle]="{'background-color': resetBtnDisabled ? '': 'skyblue'}">Rest Counter</button>
+
+    <div class="countingContainer">
+       Counting: {{counter}}
+    </div>
+</div>

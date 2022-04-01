@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { FormComponent } from './forms/td-form/form.component';
+import { ObservablePractiseComponent } from './observable-practise/observable-practise.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NameComponent } from './perosonal-info/name/name.component';
 import { PerosonalInfoComponent } from './perosonal-info/perosonal-info.component';
@@ -26,6 +27,9 @@ const appRoutes: Routes = [
   {
     path: 'personal-info/:name',
     component: NameComponent
+  },
+  {
+    path: 'observable', component: ObservablePractiseComponent
   },
   {
     path: 'page-not-found', component: PageNotFoundComponent

@@ -13,6 +13,7 @@ import { NameComponent } from './perosonal-info/name/name.component';
 import { FormsComponent } from './forms/forms.component';
 import { FontColorChangerDirective } from './directive/font-color-changer.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ObservablePractiseComponent } from './observable-practise/observable-practise.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ToStringPipe,
     FormsComponent,
     FontColorChangerDirective,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ObservablePractiseComponent
   ],
   imports: [
     BrowserModule,
