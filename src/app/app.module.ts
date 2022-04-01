@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,34 +14,6 @@ import { FormsComponent } from './forms/forms.component';
 import { FontColorChangerDirective } from './directive/font-color-changer.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
-const appRoutes: Routes = [
-  {
-    path: '',
-    component: FormComponent
-  },
-  {
-    path: 'tdf',
-    component: FormComponent
-  },
-  {
-    path: 'rf',
-    component: ReactiveFormComponent
-  },
-  {
-    path: 'personal-info',
-    component: PerosonalInfoComponent
-  },
-  {
-    path: 'personal-info/:name',
-    component: NameComponent
-  },
-  {
-    path: 'page-not-found', component: PageNotFoundComponent
-  },
-  { 
-    path: '**', redirectTo: '/page-not-found'
-  }
-]
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +32,6 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
