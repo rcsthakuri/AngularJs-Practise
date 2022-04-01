@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy, EventEmitter } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, ObservableLike, Subscription } from 'rxjs';
+import { ObservableTestService } from '../observable-test.service';
 
 @Component({
   selector: 'app-observable-practise',
@@ -10,11 +11,14 @@ export class ObservablePractiseComponent implements OnInit, OnDestroy {
   // Creating custom observable for counting number
   // https://www.youtube.com/watch?v=X_QZq_X_QZs  (1:00:00)
   subscription : Subscription;
+  childMsgSubToEEmitter: Subscription;
+  childMsgSubToSubject: Subscription
   counter = 1;
   startBtnDisabled : boolean;
   runCounter: boolean =  true;
   stopBtnDisabled : boolean = true;
   resetBtnDisabled: boolean = true;
+  child1Msg: String;
   countingCutomObservable = new Observable(observer => {
     setInterval(
       () => {
@@ -29,10 +33,12 @@ export class ObservablePractiseComponent implements OnInit, OnDestroy {
         }
       }, 1000)
     }) 
-  constructor() {}
+  constructor(private obsService: ObservableTestService) {}
   ngOnInit(): void {
-    
-    
+    this.childMsgSubToEEmitter = this.obsService.messageEmitter.subscribe(msg => this.child1Msg = msg)
+    this.childMsgSubToSubject = this.obsService.messageSubject.subscribe(msg => this.child1Msg = msg)
+
+
   }
   startCounter() {
       this.runCounter = true
@@ -63,9 +69,17 @@ export class ObservablePractiseComponent implements OnInit, OnDestroy {
     this.resetBtnDisabled = true;
     this.stopBtnDisabled = true;
   }
+  // msgFromChild() {
+  //   // console.log($event)
+  //   console.log("msgFromChild handler")
+  //   this.childMsgSub = this.obsService.messageEmitter.subscribe(msg => this.child1Msg = msg)
+  // }
   ngOnDestroy() {
     console.log("Observable-practise component destroyed!")
-    this.subscription.unsubscribe()
+    this.subscription.unsubscribe();
+    this.childMsgSubToSubject.unsubscribe();
+    this.childMsgSubToEEmitter.unsubscribe();
+
   }
 
 }

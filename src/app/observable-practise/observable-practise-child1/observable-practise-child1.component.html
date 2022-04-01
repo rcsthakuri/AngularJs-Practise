@@ -1,1 +1,16 @@
-<p>observable-practise-child1 works!</p>
+<div>
+    <h2>Child Component of observable-practise</h2>
+    <h3>Trigger action to parent component using Service Event Emitter and Rxjs Subject</h3>
+    <div>
+        <input type="text" [(ngModel)]="observableService.messageFromChild" />
+        <Button (click)="msgToParentViaEEmiter()">Sending Message To Parent [Via EventEmitter]</Button>
+    </div>
+    <div>
+        <input type="text" [(ngModel)]="observableService.messageFromChild" />
+        <Button (click)="msgToParentViaSub()">Sending Message To Parent [Via Subject, This approach is nice]</Button>
+    </div>
+    <div>
+        <h2>Using Rxjs observable operator</h2>
+        <span>Tranformed data from steam of observable: {{showObsData}}</span>
+    </div>
+</div>

@@ -1,10 +1,13 @@
 import { Injectable, EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ObservableTestService {
-  eventEmitter = new EventEmitter<String>()
+  messageFromChild: String = '';
+  messageEmitter = new EventEmitter<String>()
+  messageSubject = new Subject<string>()
   constructor() { }
 
 }
