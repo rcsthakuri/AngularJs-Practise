@@ -14,6 +14,7 @@ import { FormsComponent } from './forms/forms.component';
 import { FontColorChangerDirective } from './directive/font-color-changer.directive';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ObservablePractiseComponent } from './observable-practise/observable-practise.component';
+import { ObservablePractiseChild1Component } from './observable-practise/observable-practise-child1/observable-practise-child1.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ObservablePractiseComponent } from './observable-practise/observable-pr
     FormsComponent,
     FontColorChangerDirective,
     PageNotFoundComponent,
-    ObservablePractiseComponent
+    ObservablePractiseComponent,
+    ObservablePractiseChild1Component,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,10 @@
-<h2 appFontColorChanger="blue">Personal Information: Data from Data Service</h2>
+<h2 appFontColorChanger="blue">Personal Information: Data from Data Service [Blue color by custom appFontColorChanger directive]</h2>
 <div>
+    <h2>Search by Name: Demo for passing and retriving data via routing programatically [Using Navigate]</h2>
+    <h3>Eg: Ramchandra Shahi Thakuri</h3>
     <input type="text" name="search" [(ngModel)]="searchName" /> <button [disabled]="!searchName" (click) = 'navigateSearch()'>Search</button>
 </div>
+<h3>*ngFor Demo: Showing object of Data Service</h3>
 <div *ngFor="let personalInfo of personalInfoArray">
     <div *ngFor="let property of personalInfo | keyvalue">
         <span>{{property.key | toString |  uppercase }} : {{property.value}}</span>
