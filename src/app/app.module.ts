@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes} from '@angular/router';
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormComponent } from './forms/td-form/form.component';
@@ -14,8 +13,13 @@ import { ToStringPipe } from './to-string.pipe';
 import { NameComponent } from './perosonal-info/name/name.component';
 import { FormsComponent } from './forms/forms.component';
 import { FontColorChangerDirective } from './directive/font-color-changer.directive';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const appRoutes: Routes = [
+  {
+    path: '',
+    component: FormComponent
+  },
   {
     path: 'tdf',
     component: FormComponent
@@ -32,6 +36,12 @@ const appRoutes: Routes = [
     path: 'personal-info/:name',
     component: NameComponent
   },
+  {
+    path: 'page-not-found', component: PageNotFoundComponent
+  },
+  { 
+    path: '**', redirectTo: '/page-not-found'
+  }
 ]
 @NgModule({
   declarations: [
@@ -43,7 +53,8 @@ const appRoutes: Routes = [
     NameComponent,
     ToStringPipe,
     FormsComponent,
-    FontColorChangerDirective
+    FontColorChangerDirective,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
