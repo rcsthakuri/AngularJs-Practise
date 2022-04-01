@@ -25,7 +25,14 @@ export class FormDataComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('haha', this.obs)
-    this.subscription = this.obs.subscribe(status => status === 1 ? this.showFormData() : this.showData = false)
+    // as we are using BehaviorSubject, we can subscribe to it and it will emit the latest value and implmented on reactive form only so we use try catch
+    // for td-form, approach is different
+    try {
+      this.subscription = this.obs.subscribe(status => status === 1 ? this.showFormData() : this.showData = false)
+    } 
+    catch (error) {
+      console.log(error)
+    }
   }
   showFormData() {
     this.showData = true;
