@@ -13,6 +13,7 @@ import { PerosonalInfoComponent } from './perosonal-info/perosonal-info.componen
 import { ToStringPipe } from './to-string.pipe';
 import { NameComponent } from './perosonal-info/name/name.component';
 import { FormsComponent } from './forms/forms.component';
+import { FontColorChangerDirective } from './directive/font-color-changer.directive';
 
 const appRoutes: Routes = [
   {
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     PerosonalInfoComponent,
     NameComponent,
     ToStringPipe,
-    FormsComponent
+    FormsComponent,
+    FontColorChangerDirective
   ],
   imports: [
     BrowserModule,
