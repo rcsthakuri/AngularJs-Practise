@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, EventEmitter, Output} from '@angular/core';
 import { FormGroup, FormControl, Validators} from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { FormDataComponent } from '../form-data/form-data.component';
@@ -14,6 +14,7 @@ export class ReactiveFormComponent implements OnInit {
   genders = ['male', 'female'];
   myReactiveForm: FormGroup;
   submitMsg;
+  @Output() eventEmit = new EventEmitter<any>();
   @ViewChild(FormDataComponent) child: FormDataComponent;
   private msgSource= new BehaviorSubject(0);
   formSubmitted = this.msgSource.asObservable()
@@ -39,6 +40,7 @@ export class ReactiveFormComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.child)
+    this.eventEmit.emit(this.myReactiveForm);
     this.changeSubmitStatus(1)
     this.submitMsg = "Form is submitted successfully."
 

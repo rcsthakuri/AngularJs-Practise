@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Dialog Test</h1>
+<div mat-dialog-content>
+    <p>This is mat dialog content, this is {{data.data1}}</p>
+    <mat-form-field appearance="fill">
+        <mat-label>Enter the data</mat-label>
+       <input placeholder="Enter value for data2" matInput [(ngModel)]='data.data2'>
+    </mat-form-field> 
+</div>
+<div mat-dialog-actions>
+    <button [mat-dialog-close]="data.data2">Close</button>
+</div>

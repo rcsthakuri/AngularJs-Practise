@@ -15,6 +15,9 @@ import { FontColorChangerDirective } from './directive/font-color-changer.direct
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ObservablePractiseComponent } from './observable-practise/observable-practise.component';
 import { ObservablePractiseChild1Component } from './observable-practise/observable-practise-child1/observable-practise-child1.component';
+import { MaterialComponent } from './material/material.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -30,12 +33,15 @@ import { ObservablePractiseChild1Component } from './observable-practise/observa
     PageNotFoundComponent,
     ObservablePractiseComponent,
     ObservablePractiseChild1Component,
+    MaterialComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

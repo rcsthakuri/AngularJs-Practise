@@ -1,0 +1,53 @@
+<div>
+    <mat-button-toggle color="primary" #hStepperOn>Show Horizontal Linear Stepper</mat-button-toggle>
+    <mat-button-toggle color="primary" #vStepperOn>Show Vertical Linear Stepper</mat-button-toggle>
+</div>
+    <h1>Horizontal Linear Stepper</h1>
+    <mat-horizontal-stepper *ngIf="hStepperOn.checked" linear> 
+        <mat-step label="Personal Information" [completed]="personalInfoPassed">
+            <p>Form Informatoin</p>
+            <app-reactive-form (eventEmit)="onSubmit($event)"></app-reactive-form>
+        </mat-step>
+        <mat-step label="Check Information" [completed]="infoCorrect">
+            <h3>User Information</h3>
+            <p>Username: {{formData.userData.name}}</p>
+            <p>Email: {{formData.userData.email}}</p>
+            <p>Gender: {{formData.gender}}</p>
+            <p>Country: {{formData.country}}</p>
+            <p>Message: {{formData.textbox}}</p>
+            <button mat-raised-button (click)="onOkData()">Data Ok, Proceed</button>
+
+        </mat-step>
+        <mat-step label="Submit Infomratoin" completed="false">
+            <p>Thank you form has been submitted successfully!</p>
+        </mat-step>
+    </mat-horizontal-stepper>
+
+
+    <h1>Vertical Stepper</h1>
+    <mat-vertical-stepper *ngIf="vStepperOn.checked" linear> 
+        <mat-step label="Personal Information" [completed]="personalInfoPassed">
+            <p>Form Informatoin</p>
+            <app-reactive-form (eventEmit)="onSubmit($event)"></app-reactive-form>
+        </mat-step>
+        <mat-step label="Check Information" [completed]="infoCorrect">
+            <h3>User Information</h3>
+            <p>Username: {{formData.userData.name}}</p>
+            <p>Email: {{formData.userData.email}}</p>
+            <p>Gender: {{formData.gender}}</p>
+            <p>Country: {{formData.country}}</p>
+            <p>Message: {{formData.textbox}}</p>
+            <button mat-raised-button (click)="onOkData()">Data Ok, Proceed</button>
+
+        </mat-step>
+        <mat-step label="Submit Infomratoin" completed="false">
+            <p>Thank you form has been submitted successfully!</p>
+        </mat-step>
+    </mat-vertical-stepper>
+    <div>
+        <h2>Dialog and Passing informatoin through it</h2>
+        <button mat-button (click)="openDialog()">Open Dialog</button>
+        <br>
+        <br>
+        Data2 Info : {{data2}}
+    </div>

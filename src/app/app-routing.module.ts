@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { FormComponent } from './forms/td-form/form.component';
+import { MaterialComponent } from './material/material.component';
 import { ObservablePractiseComponent } from './observable-practise/observable-practise.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NameComponent } from './perosonal-info/name/name.component';
@@ -30,6 +31,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'observable', component: ObservablePractiseComponent
+  },
+  {
+    path: 'material', component: MaterialComponent
   },
   {
     path: 'page-not-found', component: PageNotFoundComponent
