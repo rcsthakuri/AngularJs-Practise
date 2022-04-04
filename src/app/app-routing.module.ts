@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ArrayComponent } from './array/array.component';
 import { ReactiveFormComponent } from './forms/reactive-form/reactive-form.component';
 import { FormComponent } from './forms/td-form/form.component';
 import { MaterialComponent } from './material/material.component';
@@ -34,6 +35,9 @@ const appRoutes: Routes = [
   },
   {
     path: 'material', component: MaterialComponent
+  },
+  {
+    path: 'array', component: ArrayComponent
   },
   {
     path: 'page-not-found', component: PageNotFoundComponent

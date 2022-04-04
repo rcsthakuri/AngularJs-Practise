@@ -18,6 +18,7 @@ import { ObservablePractiseChild1Component } from './observable-practise/observa
 import { MaterialComponent } from './material/material.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { ArrayComponent } from './array/array.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MaterialModule } from './material/material.module';
     ObservablePractiseComponent,
     ObservablePractiseChild1Component,
     MaterialComponent,
+    ArrayComponent,
   ],
   imports: [
     BrowserModule,
